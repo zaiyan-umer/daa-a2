@@ -1,0 +1,11 @@
+dataset,input_size,execution_time_seconds
+input_01,150,0.00176
+input_02,200,0.00257
+input_03,300,0.005242
+input_04,400,0.007851
+input_05,500,0.010849
+input_06,600,0.015682
+input_07,700,0.019445
+input_08,800,0.023517
+input_09,900,0.026916
+input_10,3,1e-06
