@@ -1,10 +1,3 @@
-"""
-Benchmark execution for Divide and Conquer assignment.
-
-Loads all 20 datasets, executes the corresponding algorithm,
-records execution times, and writes CSV result files.
-"""
-
 import csv
 import os
 import time
@@ -13,7 +6,6 @@ from karatsuba import karatsuba
 
 
 def run_closest_pair_benchmarks():
-    """Execute closest_pair() on all 10 datasets and return results."""
     results = []
     base_dir = os.path.join(os.path.dirname(__file__), "datasets", "closest_pair")
 
@@ -30,7 +22,6 @@ def run_closest_pair_benchmarks():
             x, y = line.strip().split()
             pts.append((int(x), int(y)))
 
-        # Time the algorithm only (parsing excluded)
         t0 = time.perf_counter()
         p1, p2, d = closest_pair(pts)
         t1 = time.perf_counter()
@@ -48,7 +39,6 @@ def run_closest_pair_benchmarks():
 
 
 def run_multiplication_benchmarks():
-    """Execute karatsuba() on all 10 datasets and return results."""
     results = []
     base_dir = os.path.join(os.path.dirname(__file__), "datasets", "multiplication")
 
@@ -62,10 +52,8 @@ def run_multiplication_benchmarks():
         x = int(lines[0].strip())
         y = int(lines[1].strip())
 
-        # Time the algorithm only (parsing excluded)
         t0 = time.perf_counter()
         prod = karatsuba(x, y)
-        # Verify against built-in multiplication
         verified = prod == x * y
         t1 = time.perf_counter()
 
@@ -80,7 +68,6 @@ def run_multiplication_benchmarks():
 
 
 def write_closest_pair_csv(results, output_dir):
-    """Write closest pair results to CSV."""
     filepath = os.path.join(output_dir, "closest_pair.csv")
     fieldnames = [
         "dataset", "input_size", "closest_point_1", "closest_point_2",
@@ -95,7 +82,6 @@ def write_closest_pair_csv(results, output_dir):
 
 
 def write_multiplication_csv(results, output_dir):
-    """Write multiplication results to CSV."""
     filepath = os.path.join(output_dir, "multiplication.csv")
     fieldnames = ["dataset", "input_size", "execution_time_seconds"]
     with open(filepath, "w", newline="") as f:
@@ -107,7 +93,6 @@ def write_multiplication_csv(results, output_dir):
 
 
 def print_summary(cp_results, mul_results):
-    """Print a readable summary of all executions to the terminal."""
     print("=" * 72)
     print("CLOSEST PAIR BENCHMARK RESULTS")
     print("=" * 72)

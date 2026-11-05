@@ -58,17 +58,17 @@ def karatsuba(x, y):
 
 ```
 divide-conquer-visualizer/
-├── closest_pair.py       # O(n log n) closest pair algorithm
-├── karatsuba.py          # Karatsuba multiplication
-├── generate_datasets.py  # Dataset generation (fixed seed = 42)
-├── run_benchmarks.py     # Execute algorithms on all datasets
+├── closest_pair.py
+├── karatsuba.py
+├── generate_datasets.py
+├── run_benchmarks.py
 ├── datasets/
-│   ├── closest_pair/     # 10 input files (150–5000 points)
-│   └── multiplication/   # 10 input files (150–1000 digits)
+│   ├── closest_pair/
+│   └── multiplication/
 ├── results/
-│   ├── closest_pair.csv  # 10 rows with timing + distance
-│   └── multiplication.csv# 10 rows with timing
-└── README.md             # This file
+│   ├── closest_pair.csv
+│   └── multiplication.csv
+└── README.md
 ```
 
 ---
@@ -126,12 +126,10 @@ Executes both algorithms on all datasets, writes CSVs to `results/`, prints summ
 from closest_pair import closest_pair
 from karatsuba import karatsuba
 
-# Closest pair
 points = [(0, 0), (3, 4), (1, 1)]
-p1, p2, d = closest_pair(points)  # d = 5.0
+p1, p2, d = closest_pair(points)
 
-# Karatsuba
-result = karatsuba(123456789, 987654321)  # Verified against x * y
+result = karatsuba(123456789, 987654321)
 ```
 
 ---
